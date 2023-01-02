@@ -1,0 +1,164 @@
+:root {
+    font-size: 62.5%;
+    --col-SandyBrown: #F4A261;
+    --col-Charcoal: #264653;
+    --col-BurntSienna: #E76F51;
+    --col-PersianGreen: #2A9D8F;
+    --col-MaizeCrayola: #E9C46A;
+    --text-color: #323;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text-color);
+    background-color: #264653;
+
+}
+
+.container {
+    max-width: 550px;
+    background-color: var(--col-MaizeCrayola);
+    margin: 8rem auto;
+    padding: 3rem 2rem;
+    border-radius: .6rem;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--col-PersianGreen);
+    text-shadow: .1rem .1rem var(--col-BurntSienna);
+    letter-spacing: .7rem;
+}
+
+form {
+    width: 60%;
+    height: 15rem;
+    margin: 0 auto 3rem auto;
+    background-color: var(--col-PersianGreen);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 .1rem 0 .1rem var(--col-BurntSienna);
+    text-align: left;
+
+
+}
+
+input {
+    all: unset;
+    border-radius: 6rem;
+    padding: 1rem;
+    width: 60%;
+    background-color: #fff;
+    box-shadow: 0rem .1rem 0 .1rem var(--col-MaizeCrayola);
+    transition: .5s;
+
+
+}
+
+input::placeholder {
+    color: var(--col-Charcoal);
+}
+
+input:focus {
+    box-shadow: 0 .1rem 0 .1rem var(--col-BurntSienna);
+}
+
+ul {
+    text-align: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    white-space: pre-line;
+}
+
+ul li {
+
+    list-style: none;
+    cursor: pointer;
+    padding-top: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+
+li::before,
+li::after {
+    font-size: 1.1rem;
+    padding-left: 0.2rem;
+    color: var(--col-PersianGreen);
+    padding: .7rem .7rem 0 0;
+}
+
+ul li::before {
+    content: "*";
+    font-size: 2.5rem;
+    color: var(--col-PersianGreen);
+}
+
+ul li::after {
+    opacity: 0;
+}
+
+ul li:hover::after {
+    content: "(terminé)";
+    font-style: italic;
+    animation: hoverAnim 2s forwards;
+}
+
+li.checked::before {
+    content: "✔";
+    font-size: 1.5rem;
+    padding: .9rem .5rem;
+
+
+}
+
+li.checked:hover::after {
+    content: "(supprimer)";
+    font-style: italic;
+
+}
+
+@keyframes hoverAnim {
+    to {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width:420px) {
+
+    .container {
+        margin: 1.5rem auto;
+        padding: 0;
+        padding-bottom: 1rem;
+    }
+
+    h1 {
+        padding: 1rem 0 0 0;
+        font-size: 2rem;
+    }
+
+    form {
+        width: 90%;
+        height: 9rem;
+        margin-bottom: 1rem;
+        /* padding-bottom: 1rem; */
+
+
+    }
+
+    input {
+        width: 80%;
+    }
+
+    ul {
+        padding: 0 .5rem;
+        margin-top: 0;
+    }
+
+    ul li {
+        padding-top: 0;
+    }
+}
